@@ -1,1 +1,19 @@
 Placeholder model
+
+import numpy as np
+import pickle
+from sklearn.linear_model import LogisticRegression
+
+# Sample training data
+X = np.array([[25, 50000], [35, 70000], [45, 80000]])
+y = [0, 1, 1]
+
+# Train model
+model = LogisticRegression()
+model.fit(X, y)
+
+# Save model
+with open("model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+print("✅ model.pkl created successfully!")
